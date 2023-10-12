@@ -1,15 +1,25 @@
 {
-  "name": "src",
+  "name": "pac1",
   "version": "1.0.0",
   "description": "",
+  "source": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm-run-all clean parcel:dev",
+    "build": "npm-run-all clean parcel:build",
+    "parcel:dev": "parcel",
+    "parcel:build": "parcel build",
+    "clean": "rimraf dist .parcel-cache"
   },
   "keywords": [],
   "author": "Jordi Cruz Lladó <jcl336@uoc.edu>",
   "license": "MIT",
   "devDependencies": {
+    "npm-run-all": "^4.1.5",
     "parcel": "^2.10.0",
-    "posthtml-include": "^1.7.4"
+    "posthtml-include": "^1.7.4",
+    "rimraf": "^5.0.5"
+  },
+  "dependencies": {
+    "posthtml-doctype": "^1.1.1"
   }
 }
