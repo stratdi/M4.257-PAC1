@@ -9,20 +9,31 @@
     font-family: 'PT Sans', sans-serif;
 }
 
-.op {
-    font-family: 'OnePiece';
-    text-transform: uppercase;
-    font-weight: bold;
+html {
+    background-color: #e3ecec;
 }
 
-body {
+
+header {
+    background: linear-gradient(12deg, rgba(56, 99, 255, 1) 0%, rgba(70, 242, 239, 1) 63%, rgba(255, 255, 255, 1) 100%);
+
     h1 {
+        color: white;
+        text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+            1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
         font-family: 'OnePiece';
         text-align: center;
         font-size: 5rem;
         margin: 10px 0px;
         text-transform: uppercase;
+        margin: 0px;
     }
+}
+
+body {
+    margin: 0px;
+    position: relative;
+    min-height: 100vh;
 }
 
 /* Creació de menú */
@@ -66,6 +77,17 @@ body {
         /* Cambia la dirección de flexión a vertical */
         align-items: center;
     }
+
+
+    .grid-container {
+        grid-template-columns: 100% !important;
+        margin: 10px 0px;
+
+    }
+}
+
+main {
+    margin: 0px 10px 0px 10px;
 }
 
 main>section>article {
@@ -95,4 +117,64 @@ main>section>article {
     border-radius: 50%;
     object-fit: cover;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 0px;
+    grid-template-columns: 33% 33% 33%;
+    background-color: #fff;
+    color: #444;
+}
+
+.grid {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    background-color: #DECBB6;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.grid img {
+    width: 100%;
+}
+
+.grid p,
+.grid strong {
+    font-family: monospace;
+}
+
+.op {
+    font-family: 'OnePiece';
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.grid-container figure.grid p.op {
+    font-family: 'OnePiece';
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.grid-container figure.grid p.pt {
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+    font-family: 'PT Sans', sans-serif;
+}
+
+footer {
+    background-color: #333;
+    color:white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5rem; 
+    text-align: center;
+    font-weight: bold;
+
+    p {
+        margin:15px;
+    }
 }
