@@ -1,180 +1,204 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+/* Fonts */
+$font-pt-sans: 'PT Sans', sans-serif;
+$font-one-piece: 'OnePiece';
+
+/* Colors */
+$color-background: #e3ecec;
+$color-header-gradient: linear-gradient(12deg, rgba(56, 99, 255, 1) 0%, rgba(70, 242, 239, 1) 63%, rgba(255, 255, 255, 1) 100%);
+$color-header-text: white;
+$color-header-text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+$color-menu-bg: #333;
+$color-menu-text: #fff;
+$color-menu-text-hover: red;
+$color-card-bg: white;
+$color-grid-bg: #DECBB6;
+$color-grid-text: #444;
+$color-footer-bg: #333;
+$color-footer-text: white;
+$color-btn-bg: blue;
+$color-btn-text: white;
+$box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
 @font-face {
-    font-family: "OnePiece";
-    src: url("/src/fonts/op.ttf");
+  font-family: $font-one-piece;
+  src: url("/src/fonts/op.ttf");
 }
 
 * {
-    font-family: 'PT Sans', sans-serif;
+  font-family: $font-pt-sans;
 }
 
 html {
-    background-color: #e3ecec;
+  background-color: $color-background;
 }
 
-
+/* Capçalera de la plana */
 header {
-    background: linear-gradient(12deg, rgba(56, 99, 255, 1) 0%, rgba(70, 242, 239, 1) 63%, rgba(255, 255, 255, 1) 100%);
+  background: $color-header-gradient;
 
-    h1 {
-        color: white;
-        text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
-            1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
-        font-family: 'OnePiece';
-        text-align: center;
-        font-size: 5rem;
-        margin: 10px 0px;
-        text-transform: uppercase;
-        margin: 0px;
-    }
+  h1 {
+    color: $color-header-text;
+    text-shadow: $color-header-text-shadow;
+    text-align: center;
+    font-size: 5rem;
+    text-transform: uppercase;
+    margin: 0;
+    font-family: $font-one-piece;
+  }
 }
 
+/* Contingut de la plana */
 body {
-    margin: 0px;
-    position: relative;
-    min-height: 100vh;
+  margin: 0;
+  position: relative;
+  min-height: 100vh;
 }
 
-/* Creació de menú */
+/* Relatiu al menú */
 .menu {
-    display: flex;
-    justify-content: space-around;
-    background-color: #333;
+  display: flex;
+  justify-content: space-around;
+  background-color: $color-menu-bg;
+  color: $color-menu-text;
+
+  a {
+    text-decoration: none;
     color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
 
-    a {
-        text-decoration: none;
-        color: #fff;
-        width: 100%;
-        text-align: center;
-        padding: 10px 0px;
-        font-family: 'PT Sans', sans-serif;
-        font-size: 1rem;
-        font-weight: bold;
-        display: flex;
-        justify-content: center;
-
-        svg {
-            margin-right: 5px;
-        }
+    svg {
+      margin-right: 5px;
     }
 
-    a:hover {
-        background-color: red;
+    &:hover {
+      background-color: $color-menu-text-hover;
     }
+  }
 }
 
-/* Estilos para hacer el menú responsivo */
-@media (max-width: 768px) {
-    .menu {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        flex-direction: column;
-        /* Cambia la dirección de flexión a vertical */
-        align-items: center;
-    }
-
-
-    .grid-container {
-        grid-template-columns: 100% !important;
-        margin: 10px 0px;
-
-    }
-}
-
+/* Relatiu al contingut principal */
 main {
-    margin: 0px 10px 0px 10px;
-}
+  margin: 0 10px;
+  padding-bottom: 13vh;
 
-main>section>article {
+  > section > article {
     margin-top: 20px;
-    background-color: white;
+    background-color: $color-card-bg;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    box-shadow: $box-shadow;
+  }
 }
 
+/* Estis tipus 'card'. */
 .card {
-    display: flex;
-}
+  display: flex;
 
-.card-image {
+  .card-image, .card-content {
     padding: 10px;
-}
+  }
 
-.card-content {
-    padding: 10px;
-
-}
-
-.card img {
+  img {
     width: 124px;
     height: 124px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    box-shadow: $box-shadow;
+  }
 }
 
+/* Contenidors de tipus grid per organitzar info en columnes. */
 .grid-container {
-    display: grid;
-    grid-gap: 0px;
-    grid-template-columns: 33% 33% 33%;
-    background-color: #fff;
-    color: #444;
-}
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: repeat(3, 33%);
+  background-color: $color-card-bg;
+  color: $color-grid-text;
 
-.grid {
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    background-color: #DECBB6;
+  figure.grid {
+    box-shadow: $box-shadow;
+    background-color: $color-grid-bg;
     border-radius: 5px;
     padding: 10px;
-}
 
-.grid img {
-    width: 100%;
-}
-
-.grid p,
-.grid strong {
-    font-family: monospace;
-}
-
-.op {
-    font-family: 'OnePiece';
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.grid-container figure.grid p.op {
-    font-family: 'OnePiece';
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 3rem;
-    text-align: center;
-}
-
-.grid-container figure.grid p.pt {
-    font-weight: bold;
-    font-size: 3rem;
-    text-align: center;
-    font-family: 'PT Sans', sans-serif;
-}
-
-footer {
-    background-color: #333;
-    color:white;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 5rem; 
-    text-align: center;
-    font-weight: bold;
-
-    p {
-        margin:15px;
+    img {
+      width: 100%;
     }
+
+    p, strong {
+      font-family: monospace;
+    }
+
+    p.op {
+      font-family: $font-one-piece;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    p.pt {
+      font-weight: bold;
+      font-size: 3rem;
+      text-align: center;
+      font-family: $font-pt-sans;
+    }
+  }
+}
+
+/* Estils del footer */
+footer {
+  background-color: $color-footer-bg;
+  color: $color-footer-text;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;
+  text-align: center;
+  font-weight: bold;
+
+  p {
+    margin: 15px;
+  }
+}
+
+a.btn {
+  background-color: $color-btn-bg;
+  padding: 10px 20px;
+  text-align: center;
+  color: $color-btn-text;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+/* Estils per dispositius mòbils */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .grid-container {
+    grid-template-columns: 100%;
+    margin: 10px 0;
+  }
+
+  .links {
+    text-align: center;
+  }
 }

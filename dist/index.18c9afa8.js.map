@@ -1,0 +1,1 @@
+{"mappings":"AAAA,SAAS,gBAAgB,CAAC,oBAAoB;IAC1C,oCAAoC;IACpC,QAAQ,OAAO;AACnB","sources":["src/js/init.js"],"sourcesContent":["document.addEventListener(\"DOMContentLoaded\", function () {\n    // Inicialització del plugin feather\n    feather.replace();\n});"],"names":[],"version":3,"file":"index.18c9afa8.js.map","sourceRoot":"/__parcel_source_root/"}
