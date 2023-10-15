@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "source": "index.html",
+  "browserslist": "cover 99.5%, dead",
   "scripts": {
     "start": "npm-run-all clean parcel:dev",
     "build": "npm-run-all clean parcel:build",
@@ -22,7 +23,6 @@
   },
   "dependencies": {
     "feather-icons": "^4.29.1",
-    "font-awesome": "^4.7.0",
     "posthtml-doctype": "^1.1.1"
   }
 }
