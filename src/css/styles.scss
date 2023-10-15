@@ -1,75 +1,101 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-/* Fonts */
-$font-pt-sans: 'PT Sans', sans-serif;
-$font-one-piece: 'OnePiece';
+:root {
+    /* Fonts */
+    --font-pt-sans: 'PT Sans', sans-serif;
+    --font-one-piece: 'OnePiece';
 
-/* Colors */
-$color-background: #e3ecec;
-$color-header-gradient: linear-gradient(12deg, rgba(56, 99, 255, 1) 0%, rgba(70, 242, 239, 1) 63%, rgba(255, 255, 255, 1) 100%);
-$color-header-text: white;
-$color-header-text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
-$color-menu-bg: #354259;
-$color-menu-text: #fff;
-$color-menu-text-hover: #5272F2;
-$color-card-bg: white;
-$color-grid-bg: #DECBB6;
-$color-grid-text: black;
-$color-footer-bg: #354259;
-$color-footer-text: white;
-$color-btn-bg: #354259;
-$color-btn-bg-hover: #5272F2;
-$color-btn-text: white;
-$color-link: white;
-$color-link-bg: #191D88;
-$box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    /* Colors */
+    --color-background: #e3ecec;
+    --color-header-gradient: linear-gradient(12deg, rgba(56, 99, 255, 1) 0%, rgba(70, 242, 239, 1) 63%, rgba(255, 255, 255, 1) 100%);
+    --color-header-text: white;
+    --color-header-text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+    --color-menu-bg: #354259;
+    --color-menu-text: #fff;
+    --color-menu-text-hover: #5272F2;
+    --color-card-bg: white;
+    --color-grid-bg: #DECBB6;
+    --color-grid-text: black;
+    --color-footer-bg: #354259;
+    --color-footer-text: white;
+    --color-btn-bg: #354259;
+    --color-btn-bg-hover: #5272F2;
+    --color-btn-text: white;
+    --color-link: white;
+    --color-link-bg: #191D88;
+    --color-text: black;
+    --box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+
+[data-theme="dark"] {
+    --color-background: #222;
+    --color-header-gradient: linear-gradient(12deg, rgba(0, 0, 0, 1) 0%, rgba(15, 15, 15, 1) 63%, rgba(56, 99, 255, 1) 100%);
+    --color-header-text: white;
+    --color-header-text-shadow: none;
+    --color-menu-bg: #111;
+    --color-menu-text: #fff;
+    --color-menu-text-hover: #5272F2;
+    --color-card-bg: #333;
+    --color-grid-bg: #444;
+    --color-grid-text: white;
+    --color-footer-bg: #111;
+    --color-footer-text: white;
+    --color-btn-bg: #111;
+    --color-btn-bg-hover: #5272F2;
+    --color-btn-text: white;
+    --color-link: white;
+    --color-link-bg: #191D88;
+    --color-text: white;
+    --box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
 
 @font-face {
-    font-family: $font-one-piece;
+    font-family: "OnePiece";
     src: url("/src/fonts/op.ttf");
 }
 
 * {
-    font-family: $font-pt-sans;
+    font-family: var(--font-pt-sans);
 }
 
 html {
-    background-color: $color-background;
+    background-color: var(--color-background);
 }
 
 a {
     text-decoration: none;
     font-weight: bold;
-    color: $color-link;
-    background-color: $color-link-bg;
+    color: var(--color-link);
+    background-color: var(--color-link-bg);
     padding: 5px;
     border-radius: 5px;
 }
 
 /* Capçalera de la plana */
 header {
-    background: $color-header-gradient;
+    background: var(--color-header-gradient);
 
     h1 {
-        color: $color-header-text;
-        text-shadow: $color-header-text-shadow;
+        color: var(--color-header-text);
+        text-shadow: var(--color-header-text-shadow);
         text-align: center;
         font-size: 5rem;
         text-transform: uppercase;
         margin: 0;
-        font-family: $font-one-piece;
+        font-family: var(--font-one-piece);
     }
 
     /* Relatiu al menú */
     .menu {
         display: flex;
         justify-content: space-around;
-        background-color: $color-menu-bg;
-        color: $color-menu-text;
+        background-color: var(--color-menu-bg);
+        color: var(--color-menu-text);
 
         a {
             text-decoration: none;
-            color: $color-menu-text;
+            color: var(--color-menu-text);
             width: 100%;
             text-align: center;
             padding: 10px 0;
@@ -86,7 +112,7 @@ header {
             }
 
             &:hover {
-                background-color: $color-menu-text-hover;
+                background-color: var(--color-menu-text-hover);
             }
         }
     }
@@ -97,6 +123,7 @@ body {
     margin: 0;
     position: relative;
     min-height: 100vh;
+    color: var(--color-text);
 }
 
 /* Relatiu al contingut principal */
@@ -106,10 +133,10 @@ main {
 
     section>article {
         margin-bottom: 20px;
-        background-color: $color-card-bg;
+        background-color: var(--color-card-bg);
         padding: 20px;
         border-radius: 10px;
-        box-shadow: $box-shadow;
+        box-shadow: var(--box-shadow);
 
         header>img {
             width: 100%;
@@ -120,9 +147,9 @@ main {
 }
 
 aside {
-    background-color: $color-card-bg;
+    background-color: var(--color-card-bg);
     border-radius: 10px;
-    box-shadow: $box-shadow;
+    box-shadow: var(--box-shadow);
     padding: 20px;
 
     &.related {
@@ -134,6 +161,10 @@ aside {
         &>div {
             position: sticky;
             top: 0;
+        }
+
+        .links {
+            text-align: center;
         }
     }
 }
@@ -152,7 +183,7 @@ aside {
         height: 124px;
         border-radius: 50%;
         object-fit: cover;
-        box-shadow: $box-shadow;
+        box-shadow: var(--box-shadow);
     }
 }
 
@@ -161,12 +192,12 @@ aside {
     display: grid;
     grid-gap: 0;
     grid-template-columns: repeat(3, 33%);
-    background-color: $color-card-bg;
-    color: $color-grid-text;
+    background-color: var(--color-card-bg);
+    color: var(--color-grid-text);
 
     .grid {
-        box-shadow: $box-shadow;
-        background-color: $color-grid-bg;
+        box-shadow: var(--box-shadow);
+        background-color: var(--color-grid-bg);
         border-radius: 5px;
         padding: 10px;
 
@@ -180,7 +211,7 @@ aside {
         }
 
         p.op {
-            font-family: $font-one-piece;
+            font-family: var(--font-one-piece);
             text-transform: uppercase;
             font-weight: bold;
             font-size: 3rem;
@@ -191,7 +222,7 @@ aside {
             font-weight: bold;
             font-size: 3rem;
             text-align: center;
-            font-family: $font-pt-sans;
+            font-family: var(--font-pt-sans);
         }
     }
 
@@ -213,8 +244,8 @@ aside {
 
 /* Estils del footer */
 footer {
-    background-color: $color-footer-bg;
-    color: $color-footer-text;
+    background-color: var(--color-footer-bg);
+    color: var(--color-footer-text);
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -225,19 +256,35 @@ footer {
     p {
         margin: 15px;
     }
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    #theme-toggler {
+        position: absolute;
+        right: 0;
+        bottom: 20px;
+
+        label {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    }
 }
 
 a.btn {
-    background-color: $color-btn-bg;
+    background-color: var(--color-btn-bg);
     padding: 10px 20px;
     text-align: center;
-    color: $color-btn-text;
+    color: var(--color-btn-text);
     font-weight: bold;
     text-decoration: none;
     border-radius: 10px;
+    white-space: nowrap;
 
     &:hover {
-        background-color: $color-btn-bg-hover;
+        background-color: var(--color-btn-bg-hover);
     }
 }
 

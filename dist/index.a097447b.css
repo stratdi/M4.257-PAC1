@@ -1,20 +1,66 @@
 @import "https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap";
+:root {
+  --font-pt-sans: "PT Sans", sans-serif;
+  --font-one-piece: "OnePiece";
+  --color-background: #e3ecec;
+  --color-header-gradient: linear-gradient(12deg, #3863ff 0%, #46f2ef 63%, #fff 100%);
+  --color-header-text: white;
+  --color-header-text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+  --color-menu-bg: #354259;
+  --color-menu-text: #fff;
+  --color-menu-text-hover: #5272f2;
+  --color-card-bg: white;
+  --color-grid-bg: #decbb6;
+  --color-grid-text: black;
+  --color-footer-bg: #354259;
+  --color-footer-text: white;
+  --color-btn-bg: #354259;
+  --color-btn-bg-hover: #5272f2;
+  --color-btn-text: white;
+  --color-link: white;
+  --color-link-bg: #191d88;
+  --color-text: black;
+  --box-shadow: #00000029 0px 3px 6px, #0000003b 0px 3px 6px;
+}
+
+[data-theme="dark"] {
+  --color-background: #222;
+  --color-header-gradient: linear-gradient(12deg, #000 0%, #0f0f0f 63%, #3863ff 100%);
+  --color-header-text: white;
+  --color-header-text-shadow: none;
+  --color-menu-bg: #111;
+  --color-menu-text: #fff;
+  --color-menu-text-hover: #5272f2;
+  --color-card-bg: #333;
+  --color-grid-bg: #444;
+  --color-grid-text: white;
+  --color-footer-bg: #111;
+  --color-footer-text: white;
+  --color-btn-bg: #111;
+  --color-btn-bg-hover: #5272f2;
+  --color-btn-text: white;
+  --color-link: white;
+  --color-link-bg: #191d88;
+  --color-text: white;
+  --box-shadow: #00000029 0px 3px 6px, #0000003b 0px 3px 6px;
+}
+
 @font-face {
   font-family: OnePiece;
   src: url("op.bdd69a96.ttf");
 }
 
 * {
-  font-family: PT Sans, sans-serif;
+  font-family: var(--font-pt-sans);
 }
 
 html {
-  background-color: #e3ecec;
+  background-color: var(--color-background);
 }
 
 a {
-  color: #fff;
-  background-color: #191d88;
+  color: var(--color-link);
+  background-color: var(--color-link-bg);
   border-radius: 5px;
   padding: 5px;
   font-weight: bold;
@@ -22,28 +68,28 @@ a {
 }
 
 header {
-  background: linear-gradient(12deg, #3863ff 0%, #46f2ef 63%, #fff 100%);
+  background: var(--color-header-gradient);
 }
 
 header h1 {
-  color: #fff;
-  text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+  color: var(--color-header-text);
+  text-shadow: var(--color-header-text-shadow);
   text-align: center;
   text-transform: uppercase;
-  margin: 0;
-  font-family: OnePiece;
   font-size: 5rem;
+  font-family: var(--font-one-piece);
+  margin: 0;
 }
 
 header .menu {
-  color: #fff;
-  background-color: #354259;
+  background-color: var(--color-menu-bg);
+  color: var(--color-menu-text);
   justify-content: space-around;
   display: flex;
 }
 
 header .menu a {
-  color: #fff;
+  color: var(--color-menu-text);
   text-align: center;
   background-color: #0000;
   border-radius: 0;
@@ -62,10 +108,11 @@ header .menu a svg {
 }
 
 header .menu a:hover {
-  background-color: #5272f2;
+  background-color: var(--color-menu-text-hover);
 }
 
 body {
+  color: var(--color-text);
   min-height: 100vh;
   margin: 0;
   position: relative;
@@ -77,11 +124,11 @@ main {
 }
 
 main section > article {
-  background-color: #fff;
+  background-color: var(--color-card-bg);
+  box-shadow: var(--box-shadow);
   border-radius: 10px;
   margin-bottom: 20px;
   padding: 20px;
-  box-shadow: 0 3px 6px #00000029, 0 3px 6px #0000003b;
 }
 
 main section > article header > img {
@@ -91,10 +138,10 @@ main section > article header > img {
 }
 
 aside {
-  background-color: #fff;
+  background-color: var(--color-card-bg);
+  box-shadow: var(--box-shadow);
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 3px 6px #00000029, 0 3px 6px #0000003b;
 }
 
 aside.related img {
@@ -107,6 +154,10 @@ aside.related > div {
   top: 0;
 }
 
+aside.related .links {
+  text-align: center;
+}
+
 .card {
   display: flex;
 }
@@ -117,25 +168,25 @@ aside.related > div {
 
 .card img {
   object-fit: cover;
+  box-shadow: var(--box-shadow);
   border-radius: 50%;
   width: 124px;
   height: 124px;
-  box-shadow: 0 3px 6px #00000029, 0 3px 6px #0000003b;
 }
 
 .grid-container {
   grid-gap: 0;
-  color: #000;
-  background-color: #fff;
+  background-color: var(--color-card-bg);
+  color: var(--color-grid-text);
   grid-template-columns: repeat(3, 33%);
   display: grid;
 }
 
 .grid-container .grid {
-  background-color: #decbb6;
+  box-shadow: var(--box-shadow);
+  background-color: var(--color-grid-bg);
   border-radius: 5px;
   padding: 10px;
-  box-shadow: 0 3px 6px #00000029, 0 3px 6px #0000003b;
 }
 
 .grid-container .grid img {
@@ -147,18 +198,18 @@ aside.related > div {
 }
 
 .grid-container .grid p.op {
+  font-family: var(--font-one-piece);
   text-transform: uppercase;
   text-align: center;
-  font-family: OnePiece;
   font-size: 3rem;
   font-weight: bold;
 }
 
 .grid-container .grid p.pt {
   text-align: center;
-  font-family: PT Sans, sans-serif;
   font-size: 3rem;
   font-weight: bold;
+  font-family: var(--font-pt-sans);
 }
 
 .grid-container.related {
@@ -177,9 +228,9 @@ aside.related > div {
 }
 
 footer {
-  color: #fff;
+  background-color: var(--color-footer-bg);
+  color: var(--color-footer-text);
   text-align: center;
-  background-color: #354259;
   width: 100%;
   height: 5rem;
   font-weight: bold;
@@ -191,10 +242,26 @@ footer p {
   margin: 15px;
 }
 
+footer input[type="radio"] {
+  display: none;
+}
+
+footer #theme-toggler {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+}
+
+footer #theme-toggler label {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
 a.btn {
+  background-color: var(--color-btn-bg);
   text-align: center;
-  color: #fff;
-  background-color: #354259;
+  color: var(--color-btn-text);
+  white-space: nowrap;
   border-radius: 10px;
   padding: 10px 20px;
   font-weight: bold;
@@ -202,7 +269,7 @@ a.btn {
 }
 
 a.btn:hover {
-  background-color: #5272f2;
+  background-color: var(--color-btn-bg-hover);
 }
 
 .yt {
